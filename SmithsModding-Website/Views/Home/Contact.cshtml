@@ -1,17 +1,32 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact one of the team!";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>@ViewBag.Title</h2>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="container">
+    <h3>Team Members</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Twitter</th>
+            </tr>
+        </thead>
+        <tr>
+            <td><b>SmithsModding:</b></td>
+            <td><a href="mailto:smithsmodding@outlook.com">Email</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>OrionOnline:</b></td>
+            <td><a href="mailto:oriondevelopment@outlook.com">Email</a></td>
+            <td><a href="http://twitter.com/OrionMinecraft">Twitter</a></td>
+        </tr>
+        <tr>
+            <td><b>TimtheBrick:</b></td>
+            <td><a href="mailto:timthebrick@outlook.com">Email</a></td>
+            <td><a href="http://twitter.com/TimtheBrickMC">Twitter</a></td>
+        </tr>
+    </table>
+</div>

@@ -22,7 +22,7 @@ namespace SmithsModding_Website.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact one of the team!";
 
             return View();
         }
