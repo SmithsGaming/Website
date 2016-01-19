@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - SmithsModding</title>
     @Styles.Render("~/Content/bundle/css")
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
 
@@ -26,7 +26,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>``
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @foreach (var menuItemViewModel in DynamicMVC.Managers.DynamicMVCManager.GetDynamicMenuItems())
                     {
