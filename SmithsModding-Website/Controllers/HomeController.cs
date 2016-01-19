@@ -26,5 +26,12 @@ namespace SmithsModding_Website.Controllers
 
             return View();
         }
+
+        public ActionResult Projects()
+        {
+            ViewBag.Message = "Projects Page.";
+
+            return View();
+        }
     }
 }
