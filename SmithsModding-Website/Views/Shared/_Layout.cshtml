@@ -14,7 +14,27 @@
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            @Html.ActionLink("SmithsModding", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">Projects<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Armory", "Armory", "Home")</li>
+                    <li>@Html.ActionLink("Armory - Weaponry", "ArmoryWeaponry", "Home")</li>
+                    <li>@Html.ActionLink("Armory - World", "ArmoryWorld", "Home")</li>
+                    <li>@Html.ActionLink("Tiny Storage", "TinyStorage", "Home")</li>
+                </ul>
+            </li>
+        </ul>
+        @Html.Partial("_LoginPartial")
+    </nav>
+    @*@<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,6 +54,7 @@
             </div>
         </div>
     </div>
+        *@
     <div class="container body-content">
         @RenderBody()
         <hr />
