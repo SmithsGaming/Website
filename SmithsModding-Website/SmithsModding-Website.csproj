@@ -222,6 +222,7 @@
     <Content Include="Content\css\select2x2.png" />
     <Content Include="Content\DynamicStyle.css" />
     <Content Include="Content\select2custom.css" />
+    <Content Include="Content\SmithsModding.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
