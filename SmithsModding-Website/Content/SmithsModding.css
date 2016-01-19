@@ -1,3 +1,7 @@
 ﻿.container.main-jumbotron-container {
     margin-top: 25px;
 }
+
+.jumbotron.home-index-jumbotron {
+    background:#0094ff
+}
