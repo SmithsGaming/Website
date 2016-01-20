@@ -23,13 +23,14 @@
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown">Projects<span class="caret"></span></a>
                 <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("SmithsCore", "Index", "SmithsCore")</li>
                     <li>@Html.ActionLink("Armory", "Index", "Armory")</li>
-                    <li>@Html.ActionLink("Armory - Weaponry", "Weaponry", "Armory")</li>
-                    <li>@Html.ActionLink("Armory - World", "World", "Armory")</li>
+                    <li>@Html.ActionLink("Armory - Weaponry", "Index", "Armory")</li>
+                    <li>@Html.ActionLink("Armory - World", "Index", "Armory")</li>
                     <li>@Html.ActionLink("Tiny Storage", "Index", "TinyStorage")</li>
                 </ul>
             </li>
-            <li>@Html.ActionLink("Forums", "Index", "Forums")</li>
+            <li>@Html.ActionLink("Forums", "Forums", "Home")</li>
             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
         </ul>
         @Html.Partial("_LoginPartial")
