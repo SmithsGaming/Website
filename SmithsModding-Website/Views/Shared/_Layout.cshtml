@@ -7,7 +7,7 @@
     <title>@ViewBag.Title - SmithsModding</title>
     @Styles.Render("~/Content/bundle/css")
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/SmithsModding.css"/>
+    <link rel="stylesheet" type="text/css" href="~/Content/SmithsModding.css" />
 
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -23,14 +23,14 @@
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown">Projects<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li>@Html.ActionLink("SmithsCore", "Index", "SmithsCore")</li>
-                    <li>@Html.ActionLink("Armory", "Index", "Armory")</li>
-                    <li>@Html.ActionLink("Armory - Weaponry", "Index", "Armory")</li>
-                    <li>@Html.ActionLink("Armory - World", "Index", "Armory")</li>
-                    <li>@Html.ActionLink("Tiny Storage", "Index", "TinyStorage")</li>
+                    <li>@Html.ActionLink("SmithsCore", "SmithsCore", "Projects")</li>
+                    <li>@Html.ActionLink("Armory", "Armory", "Projects")</li>
+                    <li>@Html.ActionLink("Armory - Weaponry", "Weaponry", "Projects")</li>
+                    <li>@Html.ActionLink("Armory - World", "World", "Projects")</li>
+                    <li>@Html.ActionLink("Tiny Storage", "TinyStorage", "Projects")</li>
                 </ul>
             </li>
-            <li>@Html.ActionLink("Forums", "Forums", "Home")</li>
+            <li>@Html.ActionLink("Forums", "Forums", "Forum")</li>
             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
         </ul>
         @Html.Partial("_LoginPartial")

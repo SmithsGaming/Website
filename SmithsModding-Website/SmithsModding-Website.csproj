@@ -196,6 +196,7 @@
     <Compile Include="Controllers\DynamicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="DynamicMVC\DynamicControllerManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -390,11 +391,12 @@
     <Content Include="Views\Shared\_DynamicDisplay.cshtml" />
     <Content Include="Views\Shared\_DynamicIndexMobileItem.cshtml" />
     <Content Include="Views\Home\Projects.cshtml" />
+    <Content Include="Views\Projects\SmithsCore.cshtml" />
+    <Content Include="Views\Projects\TinyStorage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\res\" />
-    <Folder Include="Views\Projects\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

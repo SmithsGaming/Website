@@ -6,16 +6,23 @@ using System.Web.Mvc;
 
 namespace SmithsModding_Website.Controllers
 {
-    public class HomeController : Controller
+    public class ProjectsController : Controller
     {
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult SmithsCore()
         {
-            ViewBag.Message = "Contact one of the team!";
+            ViewBag.Message = "SmithsCore";
+
+            return View();
+        }
+
+        public ActionResult TinyStorage()
+        {
+            ViewBag.Message = "TinyStorage";
 
             return View();
         }
