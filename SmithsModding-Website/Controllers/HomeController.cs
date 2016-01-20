@@ -13,6 +13,13 @@ namespace SmithsModding_Website.Controllers
             return View();
         }
 
+        public ActionResult News()
+        {
+            ViewBag.Message = "News";
+
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact one of the team!";
