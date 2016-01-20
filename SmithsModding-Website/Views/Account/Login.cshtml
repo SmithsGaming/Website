@@ -4,15 +4,27 @@
     ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="container main-jumbotron-container">
+    <div class="jumbotron home-index-jumbotron">
+        <table>
+            <tr>
+                <td>
+                    <h1>Log In</h1>
+                    <p class="lead">Use your SmithsModding account to log in</p>
+                </td>
+                <td class="col-lg-1">
+                    <img src="~/Content/res/Logo.jpg" class="img-rounded" alt="Logo" width="102" height="102">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
@@ -49,11 +61,6 @@
                         @Html.ActionLink("Forgot your password?", "ForgotPassword")
                     </p>*@
             }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
     </div>
 </div>
