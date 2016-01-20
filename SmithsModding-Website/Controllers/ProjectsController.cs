@@ -20,6 +20,27 @@ namespace SmithsModding_Website.Controllers
             return View();
         }
 
+        public ActionResult Armory()
+        {
+            ViewBag.Message = "Armory";
+
+            return View();
+        }
+
+        public ActionResult Weaponry()
+        {
+            ViewBag.Message = "Weaponry";
+
+            return View();
+        }
+
+        public ActionResult World()
+        {
+            ViewBag.Message = "World";
+
+            return View();
+        }
+
         public ActionResult TinyStorage()
         {
             ViewBag.Message = "TinyStorage";

@@ -393,6 +393,9 @@
     <Content Include="Views\Home\Projects.cshtml" />
     <Content Include="Views\Projects\SmithsCore.cshtml" />
     <Content Include="Views\Projects\TinyStorage.cshtml" />
+    <Content Include="Views\Projects\Armory.cshtml" />
+    <Content Include="Views\Projects\Weaponry.cshtml" />
+    <Content Include="Views\Projects\World.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
