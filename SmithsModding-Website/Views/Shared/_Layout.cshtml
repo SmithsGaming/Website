@@ -23,8 +23,15 @@
             .navbar-default {
                 background-color: #4891dc;
                 border-color: #1B7BDE;
-                color: #fff;
             }
+
+                .navbar-default .navbar-brand {
+                    color: #fff;
+                }
+
+                .navbar-default .navbar-nav > li > a {
+                    color: #fff;
+                }
         </style>
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -51,7 +58,7 @@
                                 <li>@Html.ActionLink("Tiny Storage", "TinyStorage", "Projects")</li>
                             </ul>
                         </li>
-                        <li><a href="http://forum.orionminecraft.com" target="_blank">Forums</a></li>
+                        <li><a href="http://forum.smithsmodding.com" target="_blank">Forums</a></li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         @foreach (var menuItemViewModel in DynamicMVC.Managers.DynamicMVCManager.GetDynamicMenuItems())
                         {
@@ -72,6 +79,12 @@
         </div>
     </header>
     <div class="container body-content">
+        <style>
+            .jumbotron {
+                padding-top: 24px;
+                padding-bottom: 24px;
+            }
+        </style>
         @RenderBody()
         <hr />
         <footer>

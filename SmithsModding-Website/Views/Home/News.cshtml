@@ -1,29 +1,65 @@
 ﻿@{
     ViewBag.Title = "News";
 }
-<div class="container main-jumbotron-container">
-    <div class="jumbotron home-index-jumbotron">
-        <table>
-            <tr>
-                <td class="col-sm-1">
-                    <h1>News</h1>
-                    <p class="lead">What's new in the world of Smiths Modding?</p>
-                </td>
-                <td class="col-sm-1">
-                    <img src="~/Content/res/Logo.jpg" class="img-rounded" alt="Logo" width="102" height="102" style="float:right">
-                </td>
-            </tr>
-        </table>
+<header>
+    <div class="container main-jumbotron-container">
+        <div class="jumbotron home-index-jumbotron">
+            <table>
+                <tr>
+                    <td class="col-sm-1">
+                        <h1>News</h1>
+                        <p class="lead">What's new in the world of Smiths Modding?</p>
+                    </td>
+                    <td class="col-sm-1">
+                        <img src="~/Content/res/Logo.jpg" class="img-rounded" alt="Logo" width="102" height="102" style="float:right">
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-</div>
-@*<table>
-    <tr>
-        <td class="col-lg-1">
-            <a class="twitter-timeline" href="https://twitter.com/SmithsModding" data-widget-id="689900628567531520">Tweets by SmithsModding</a>
-            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
-        </td>
-        <td class="col-lg-1">
+</header>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container-inner">
+                    <style>
+                        .container-inner {
+                            background-color: #333;
+                            border-color: #e8e8e8;
+                            border-radius: 5px;
+                            color: #CFCFCF;
+                            height: 600px;
+                            min-height: 200px;
+                        }
 
-        </td>
-    </tr>
-</table>*@
+                        .container-header {
+                            text-align: center;
+                            border-color: #444;
+                            border-width: 1px;
+                            border-style: solid;
+                            border-radius: 5px;
+                            padding:12px;
+                            font-weight: bold;
+                            font-size: 18px;
+                            line-height: 18px;
+                            font: 'Helvetica Neue', Roboto, 'Segoe UI', Calibri, sans-serif;
+                            border-image-source: initial;
+                            border-image-slice: initial;
+                            border-image-width: initial;
+                            border-image-outset: initial;
+                            border-image-repeat: initial;
+                        }
+                    </style>
+                    <div class="container-header">
+                        Other News
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6" align="right">
+                <a class="twitter-timeline" href="https://twitter.com/SmithsModding" data-widget-id="691382104773517312">Tweets by SmithsModding</a>
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+            </div>
+        </div>
+    </div>
+</body>
