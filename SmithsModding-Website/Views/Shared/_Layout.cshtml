@@ -11,6 +11,9 @@
 
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery-2.2.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/Scripts/bootstrap-hover-dropdown.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
 </head>
 <body>
@@ -28,7 +31,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("News", "News", "Home")</li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Projects<span class="caret"></span></a>
+                        <a href="/Projects" class="dropdown-toggle disabled" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false">
+                            Projects<span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("SmithsCore", "SmithsCore", "Projects")</li>
                             <li>@Html.ActionLink("Armory", "Armory", "Projects")</li>
@@ -37,7 +42,7 @@
                             <li>@Html.ActionLink("Tiny Storage", "TinyStorage", "Projects")</li>
                         </ul>
                     </li>
-                    <li>@Html.ActionLink("Forums", "Index", "Forums")</li>
+                    <li><a href="http://forum.orionminecraft.com" target="_blank">Forums</a></li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @foreach (var menuItemViewModel in DynamicMVC.Managers.DynamicMVCManager.GetDynamicMenuItems())
                     {

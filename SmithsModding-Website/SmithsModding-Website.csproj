@@ -249,6 +249,8 @@
     <Content Include="Content\res\WorldLogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Scripts\bootstrap-hover-dropdown.js" />
+    <Content Include="Content\Scripts\bootstrap-hover-dropdown.min.js" />
     <Content Include="Content\select2custom.css" />
     <Content Include="Content\SmithsModding.css" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -302,6 +304,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\Smiths Modding.pubxml" />
+    <None Include="Properties\PublishProfiles\SmithsModding Site.pubxml" />
     <None Include="Properties\PublishProfiles\SmithsModding Website.pubxml" />
     <None Include="Properties\PublishProfiles\SmithsModding.pubxml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
@@ -437,6 +440,7 @@
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Forums\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <Content Include="Views\Projects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
