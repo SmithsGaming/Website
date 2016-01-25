@@ -442,10 +442,10 @@
     <Content Include="Views\Forums\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
