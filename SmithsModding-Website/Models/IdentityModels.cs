@@ -16,6 +16,18 @@ namespace SmithsModding_Website.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public static IdentityUser getUserByID(string id)
+        {
+            return (new UserStore<IdentityUser>().FindByIdAsync(id).Result);
+        }
+    }
+
+    public class NewsPost
+    {
+        string htmlContent;
+        string posterID;
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

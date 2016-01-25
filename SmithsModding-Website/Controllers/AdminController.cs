@@ -23,7 +23,7 @@ namespace SmithsModding_Website.Controllers
         public ActionResult RoleConfig()
         {
             RoleConfigurationModels rc = new RoleConfigurationModels();
-            rc.Roles = (new RoleManager<IdentityRole, string>).Roles.ToList();
+            rc.Roles = (new RoleManager<IdentityRole, string>(new RoleStore<IdentityRole>())).Roles.ToList();
             ViewBag.Message = "Configure different user roles";
             return View(rc);
         }

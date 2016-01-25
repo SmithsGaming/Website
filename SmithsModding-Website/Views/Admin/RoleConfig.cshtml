@@ -1,6 +1,32 @@
-﻿@Model SmithsModding_Website.Models.RoleConfigurationModels
+﻿@using Microsoft.AspNet.Identity.EntityFramework;
+@using SmithsModding_Website.Models;
+@model SmithsModding_Website.Models.RoleConfigurationModels
+
 @{
     ViewBag.Title = "Role Configuration";
 }
+
 @Html.Partial("_AdminMenuPartial")
+<div>
+    <ul>
+        @if (Model.Roles.Count > 0)
+        {
+            foreach (IdentityRole role in Model.Roles)
+            {
+                <li>@role.Name - @role.Users.Count
+                    <span>
+                        (
+                            @foreach(IdentityUserRole userrole in role.Users)
+                            {
+                                <span>
+                                    @ApplicationUser.getUserByID(userrole.UserId).UserName;
+                                </span>                                
+                            }
+                        )
+                    </span>
+                </li>
+            }
+        }
+    </ul>
+</div>
 

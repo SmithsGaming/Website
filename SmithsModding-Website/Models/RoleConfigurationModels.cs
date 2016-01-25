@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmithsModding_Website.Models
 {
-    class RoleConfigurationModels
+    public class RoleConfigurationModels
     {
         public IList<IdentityRole> Roles { get; set; }
     }
