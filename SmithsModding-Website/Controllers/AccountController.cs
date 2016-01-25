@@ -59,6 +59,7 @@ namespace SmithsModding_Website.Controllers
         {
             ViewBag.Message = "Use your SmithsModding account to log in";
             ViewBag.Logo = "~/Content/res/Logo.jpg";
+            ViewBag.Header = true;
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -143,6 +144,7 @@ namespace SmithsModding_Website.Controllers
         {
             ViewBag.Message = "Register for a Smiths Modding account";
             ViewBag.Logo = "~/Content/res/Logo.jpg";
+            ViewBag.Header = true;
             return View();
         }
 

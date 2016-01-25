@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using SmithsModding_Website.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +17,20 @@ namespace SmithsModding_Website.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Modify settings for the site";
+            return View();
+        }
+
+        public ActionResult RoleConfig()
+        {
+            RoleConfigurationModels rc = new RoleConfigurationModels();
+            rc.Roles = (new RoleManager<IdentityRole, string>).Roles.ToList();
+            ViewBag.Message = "Configure different user roles";
+            return View(rc);
+        }
+
+        public ActionResult UserRoles()
+        {
+            ViewBag.Message = "Assign roles to users";
             return View();
         }
     }

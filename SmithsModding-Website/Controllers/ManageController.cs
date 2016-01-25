@@ -73,6 +73,7 @@ namespace SmithsModding_Website.Controllers
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
             ViewBag.Message = "Welcome to your account," + User.Identity.Name + "!";
+            ViewBag.Header = true;
             return View(model);
         }
 

@@ -12,6 +12,7 @@ namespace SmithsModding_Website.Controllers
         {
             ViewBag.Message = "Welcome to the official SmithsModding website";
             ViewBag.Logo = "~/Content/res/Logo.jpg";
+            ViewBag.Header = true;
             return View();
         }
 
@@ -19,6 +20,7 @@ namespace SmithsModding_Website.Controllers
         {
             ViewBag.Message = "What's new in the world of Smiths Modding?";
             ViewBag.Logo = "~/Content/res/Logo.jpg";
+            ViewBag.Header = true;
             return View();
         }
 
@@ -26,6 +28,7 @@ namespace SmithsModding_Website.Controllers
         {
             ViewBag.Message = "Contact one of the team!";
             ViewBag.Logo = "~/Content/res/Logo.jpg";
+            ViewBag.Header = true;
             return View();
         }
     }
