@@ -13,6 +13,7 @@ namespace SmithsModding_Website.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            ViewBag.Message = "Modify settings for the site";
             return View();
         }
     }

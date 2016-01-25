@@ -1,25 +1,15 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Admin Control Panel";
 }
-<header>
-    <div class="container main-jumbotron-container">
-        <div class="jumbotron home-index-jumbotron">
-            <h1>Admin Control Panel</h1>
-            <p class="lead">Modify settings for the site</p>
-        </div>
-    </div>
-</header>
 
-<div class="container">
-    <style>
-        .nav .navbar-inverse .navbar-left {
-            background-color: #222;
-            color:#9d9d9d
-        }
-    </style>
-    <ul class="nav navbar-inverse navbar-left">
-        <li>@Html.ActionLink("Main Site", "Index", "Home")</li>
+<div class="navbar navbar-nav navbar-inverse">
+    <ul class="nav nav-stacked"> 
+        <li>
+            <a href="@Url.Action("RoleConfig","Admin")"><span class="glyphicon glyphicon-user"></span> Role Configuration</a>
+        </li>
+        <li>
+            <a href="@Url.Action("UserRoles","Admin")"><span class="glyphicon glyphicon-user"></span> User Roles</a>
+        </li>
     </ul>
 </div>
-
