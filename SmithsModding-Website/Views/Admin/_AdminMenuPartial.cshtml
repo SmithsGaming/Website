@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "_AdminMenuPartial";
+}
+
+<div class="navbar navbar-nav navbar-inverse">
+    <style>
+        .nav-stacked li a {
+            color: #fff;
+        }
+
+        .nav-stacked a:hover {
+            color: #c3c3c3;
+        }
+    </style>
+    <ul class="nav nav-stacked">
+        <li>
+            <a href="@Url.Action("Index", "Admin")"><span class="glyphicon glyphicon-blackboard"></span> Dashboard</a>
+        </li>
+        <li>
+            <a href="@Url.Action("RoleConfig","Admin")"><span class="glyphicon glyphicon-user"></span> Role Configuration</a>
+        </li>
+        <li>
+            <a href="@Url.Action("UserRoles","Admin")"><span class="glyphicon glyphicon-user"></span> User Roles</a>
+        </li>
+    </ul>
+</div>
+
