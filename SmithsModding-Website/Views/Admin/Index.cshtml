@@ -2,10 +2,24 @@
 @{
     ViewBag.Title = "Index";
 }
-<div class="container main-jumbotron-container">
-    <div class="jumbotron home-index-jumbotron">
-        <h1>Admin Control Panel</h1>
-        <p class="lead">Modify settings for the site</p>
+<header>
+    <div class="container main-jumbotron-container">
+        <div class="jumbotron home-index-jumbotron">
+            <h1>Admin Control Panel</h1>
+            <p class="lead">Modify settings for the site</p>
+        </div>
     </div>
+</header>
+
+<div class="container">
+    <style>
+        .nav .navbar-inverse .navbar-left {
+            background-color: #222;
+            color:#9d9d9d
+        }
+    </style>
+    <ul class="nav navbar-inverse navbar-left">
+        <li>@Html.ActionLink("Main Site", "Index", "Home")</li>
+    </ul>
 </div>
 

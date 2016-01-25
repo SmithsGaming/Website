@@ -10,20 +10,22 @@ namespace SmithsModding_Website.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Message = "Welcome to the official SmithsModding website";
+            ViewBag.Logo = "~/Content/res/Logo.jpg";
             return View();
         }
 
         public ActionResult News()
         {
-            ViewBag.Message = "News";
-
+            ViewBag.Message = "What's new in the world of Smiths Modding?";
+            ViewBag.Logo = "~/Content/res/Logo.jpg";
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact one of the team!";
-
+            ViewBag.Logo = "~/Content/res/Logo.jpg";
             return View();
         }
     }

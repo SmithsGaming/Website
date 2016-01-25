@@ -72,6 +72,7 @@ namespace SmithsModding_Website.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+            ViewBag.Message = "Welcome to your account," + User.Identity.Name + "!";
             return View(model);
         }
 

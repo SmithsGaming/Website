@@ -432,7 +432,6 @@
     <Content Include="Views\Shared\_DynamicDisplayHyperlink.cshtml" />
     <Content Include="Views\Shared\_DynamicDisplay.cshtml" />
     <Content Include="Views\Shared\_DynamicIndexMobileItem.cshtml" />
-    <Content Include="Views\Home\Projects.cshtml" />
     <Content Include="Views\Projects\SmithsCore.cshtml" />
     <Content Include="Views\Projects\TinyStorage.cshtml" />
     <Content Include="Views\Projects\Armory.cshtml" />
