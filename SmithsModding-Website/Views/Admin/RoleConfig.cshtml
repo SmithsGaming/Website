@@ -5,28 +5,24 @@
 @{
     ViewBag.Title = "Role Configuration";
 }
-
 @Html.Partial("_AdminMenuPartial")
-<div>
-    <ul>
+<div class="container">
+    <table class="table-striped table-bordered">
+        <thead>
+            <tr>
+                <th class="col-sm-1 text-center"><b>Role</b></th>
+                <th class="col-sm-1 text-center"><b>Users In Role</b></th>
+            </tr>
+        </thead>
         @if (Model.Roles.Count > 0)
-        {
-            foreach (IdentityRole role in Model.Roles)
             {
-                <li>@role.Name - @role.Users.Count
-                    <span>
-                        (
-                            @foreach(IdentityUserRole userrole in role.Users)
-                            {
-                                <span>
-                                    @ApplicationUser.getUserByID(userrole.UserId).UserName;
-                                </span>                                
-                            }
-                        )
-                    </span>
-                </li>
+                foreach (IdentityRole role in Model.Roles)
+                {
+                <tr>
+                    <td class="text-center">@role.Name</td>
+                    <td class="text-center">@role.Users.Count</td>
+                </tr>
             }
         }
-    </ul>
+    </table>
 </div>
-

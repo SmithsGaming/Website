@@ -84,15 +84,22 @@
         </div>
     </header>
     <br />
-    <div class="container body-content">
+    <div class="container">
         <style>
-            .jumbotron {
+            .container {
+                margin-right: auto;
+                margin-left: auto;
+                padding-right:initial;
+                padding-left:initial;
+            }
+
+            .jumbotron.home-index-jumbotron-header {
                 padding-top: 24px;
                 padding-bottom: 24px;
             }
         </style>
-        <div class="container" id="Smiths_Header">
-            <div class="jumbotron home-index-jumbotron" style="display: flex;">
+        <div class="container-header" id="Smiths_Header">
+            <div class="jumbotron home-index-jumbotron-header" style="display:flex">
                 <div class="col-2-3" style="width: calc(2/3 * 100%);">
                     <h1>@ViewBag.Title</h1>
                     <p class="lead">@ViewBag.Message</p>
@@ -105,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <div class="container body-content">
+        <div class="container">
             @RenderBody()
         </div>
         <hr />
