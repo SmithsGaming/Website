@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using SmithsModding_Website.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,6 +38,20 @@ namespace SmithsModding_Website.Controllers
         [HttpPost]
         [Authorize(Roles = "Administrators")]
         [ValidateAntiForgeryToken]
-        
+        public async System.Threading.Tasks.Task<ActionResult> Add(NewsItem model)
+        {
+            model.Id = Guid.NewGuid().ToString();
+            model.PublishDate = DateTime.UtcNow;
+
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                model.Author = await new UserManager<ApplicationUser, string>(new UserStore<ApplicationUser>(db)).FindByIdAsync(User.Identity.GetUserId());
+
+                db.NewsItems.Add(model);
+                await db.SaveChangesAsync();
+            }
+
+            return RedirectToAction("News", "Home");
+        }
     }
 }

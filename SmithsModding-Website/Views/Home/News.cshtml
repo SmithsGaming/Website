@@ -31,34 +31,36 @@
         <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
     </div>
 </div>
-@Html.BeginForm("Add", "Home", FormMethod.Post){
-<div id="newItem" class="modal fade new-news" role="form">
-    @Html.AntiForgeryToken()
-    <div class="vertical-align-helper">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Add a News Item</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    @Html.LabelFor(m => m.Title, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-10">
-                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+
+@using (Html.BeginForm("Add", "Home", FormMethod.Post))
+{
+    <div id="newItem" class="modal fade new-news" role="form">
+        @Html.AntiForgeryToken()
+        <div class="vertical-align-helper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add a News Item</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        @Html.LabelFor(m => m.Title, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        @Html.LabelFor(m => m.Post, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.TextAreaFor(m => m.Post, new { @class = "form-control wider" })
+                        </div>
                     </div>
                 </div>
-                <br />
-                <div class="row">
-                    @Html.LabelFor(m => m.Post, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-10">
-                        @Html.TextAreaFor(m => m.Post, new { @class = "form-control wider" })
-                    </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Submit" class="btn btn-default" />
                 </div>
-            </div>
-            <div class="modal-footer">
-                <input type="submit" value="Submit" class="btn btn-default" />
             </div>
         </div>
     </div>
-</div>
 }
