@@ -17,7 +17,7 @@ namespace SmithsModding_Website.Models
         public string Title { get; set; }
 
         [Required]
-        [StringLength(256)]
+        [StringLength(1024)]
         public string Post { get; set; }
 
         public DateTime PublishDate { get; set; }
