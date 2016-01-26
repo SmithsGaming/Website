@@ -21,7 +21,6 @@ namespace SmithsModding_Website.Models
         public DateTime PublishDate { get; set; }
 
         [Required]
-        [StringLength(128)]
-        public string Author { get; set; }
+        public ApplicationUser Author { get; set; }
     }
 }

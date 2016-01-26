@@ -23,13 +23,6 @@ namespace SmithsModding_Website.Models
         }
     }
 
-    public class NewsPost
-    {
-        string htmlContent;
-        string posterID;
-
-    }
-
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -41,5 +34,7 @@ namespace SmithsModding_Website.Models
         {
             return new ApplicationDbContext();
         }
+
+        public virtual DbSet<NewsItem> NewsItems { get; set; }
     }
 }
