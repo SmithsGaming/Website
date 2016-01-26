@@ -1,5 +1,29 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@{
     ViewBag.Title = "News";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/NewsStyle.css" />
+</head>
+<div class="container" style="display:flex">
+    <div class="col-2-8" style="width:calc(2/3 * 100%)">
+        <div class="container-news">
+            <div class="container-news-header" style="display:flex">
+                <div class="col-2-4" style="width:50%">
+                    Latest News
+                </div>
+                <div class="col-1-4" style="width:50%; text-align:right">
+                    <a href="#"><span class="glyphicon glyphicon-plus-sign"></span> Add Item</a>
+                </div>
+            </div>
+            <div class="container-news-stream" style="height:555px">
 
-@*TODO: The News*@
+            </div>
+        </div>
+    </div>
+    <div class="col-2-4" style="width:calc(1/3 * 100%)">
+        <a class="twitter-timeline" href="https://twitter.com/SmithsModding" data-widget-id="691771088263602176" , data-chrome="nofooter">Tweets by SmithsModding</a>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+    </div>
+</div>
+
