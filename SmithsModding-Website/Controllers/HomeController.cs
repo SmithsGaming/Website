@@ -31,5 +31,10 @@ namespace SmithsModding_Website.Controllers
             ViewBag.Header = true;
             return View();
         }
+
+        [HttpPost]
+        [Authorize(Roles = "Administrators")]
+        [ValidateAntiForgeryToken]
+        
     }
 }
