@@ -32,7 +32,7 @@ namespace SmithsModding_Website.Controllers
 
             nim.newNewsItem = new NewsItem();
 
-            return View();
+            return View(nim);
         }
 
         public ActionResult Contact()
@@ -46,20 +46,21 @@ namespace SmithsModding_Website.Controllers
         [HttpPost]
         [Authorize(Roles = "Administrators")]
         [ValidateAntiForgeryToken]
-        public async System.Threading.Tasks.Task<ActionResult> Add(NewsItemModels model)
+        public async System.Threading.Tasks.Task<ActionResult> News(NewsItemModels model)
         {
-            model.newNewsItem.Id = Guid.NewGuid().ToString();
-            model.newNewsItem.PublishDate = DateTime.UtcNow;
-
-            using (ApplicationDbContext db = new ApplicationDbContext())
+            if (model.newNewsItem.Title != null && model.newNewsItem.Post != null)
             {
-                model.newNewsItem.Author = await new UserManager<ApplicationUser, string>(new UserStore<ApplicationUser>(db)).FindByIdAsync(User.Identity.GetUserId());
-
-                db.NewsItems.Add(model.newNewsItem);
-                await db.SaveChangesAsync();
+                model.newNewsItem.Id = Guid.NewGuid().ToString();
+                model.newNewsItem.PublishDate = DateTime.UtcNow;
+                using (ApplicationDbContext db = new ApplicationDbContext())
+                {
+                    model.newNewsItem.Author = await new UserManager<ApplicationUser, string>(new UserStore<ApplicationUser>(db)).FindByIdAsync(User.Identity.GetUserId());
+                    db.NewsItems.Add(model.newNewsItem);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("News", "Home");
+                }
             }
-
-            return RedirectToAction("News", "Home");
+            return View(model);
         }
     }
 }
