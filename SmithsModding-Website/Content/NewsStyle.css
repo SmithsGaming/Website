@@ -34,6 +34,19 @@
         color: #CFCFCF;
     }
 
-.glyphicon {
-    
+.modal.fade.new-news{
+    width:725px;
+    height:450px;
+    top:25%;
+    bottom:30%;
+    left:30%;
+    right:30%;
+}
+
+.form-control.wider {
+    max-width:800px;
+    max-height:300px;
+    width: 550px;
+    height: 200px;
+    resize:none;
 }
