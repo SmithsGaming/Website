@@ -43,7 +43,7 @@
     right:30%;
 }
 
-.form-control.wider {
+textarea.form-control.wider {
     max-width:800px;
     max-height:300px;
     width: 550px;

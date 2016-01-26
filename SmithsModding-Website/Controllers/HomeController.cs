@@ -38,16 +38,16 @@ namespace SmithsModding_Website.Controllers
         [HttpPost]
         [Authorize(Roles = "Administrators")]
         [ValidateAntiForgeryToken]
-        public async System.Threading.Tasks.Task<ActionResult> Add(NewsItem model)
+        public async System.Threading.Tasks.Task<ActionResult> Add(NewsItemModels model)
         {
-            model.Id = Guid.NewGuid().ToString();
-            model.PublishDate = DateTime.UtcNow;
+            model.newNewsItem.Id = Guid.NewGuid().ToString();
+            model.newNewsItem.PublishDate = DateTime.UtcNow;
 
             using (ApplicationDbContext db = new ApplicationDbContext())
             {
-                model.Author = await new UserManager<ApplicationUser, string>(new UserStore<ApplicationUser>(db)).FindByIdAsync(User.Identity.GetUserId());
+                model.newNewsItem.Author = await new UserManager<ApplicationUser, string>(new UserStore<ApplicationUser>(db)).FindByIdAsync(User.Identity.GetUserId());
 
-                db.NewsItems.Add(model);
+                db.NewsItems.Add(model.newNewsItem);
                 await db.SaveChangesAsync();
             }
 

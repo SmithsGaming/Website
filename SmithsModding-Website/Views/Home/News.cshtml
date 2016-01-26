@@ -36,6 +36,7 @@
 {
     <div id="newItem" class="modal fade new-news" role="form">
         @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
         <div class="vertical-align-helper">
             <div class="modal-content">
                 <div class="modal-header">
@@ -54,6 +55,11 @@
                         @Html.LabelFor(m => m.Post, new { @class = "col-sm-2 control-label" })
                         <div class="col-sm-10">
                             @Html.TextAreaFor(m => m.Post, new { @class = "form-control wider" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="charNum"class="col-sm-12" style="text-align:right">
+
                         </div>
                     </div>
                 </div>
