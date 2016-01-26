@@ -212,6 +212,10 @@
     <Compile Include="Migrations\201601261926108_Added NewsItems.Designer.cs">
       <DependentUpon>201601261926108_Added NewsItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601261928436_NewsItems-Length1024.cs" />
+    <Compile Include="Migrations\201601261928436_NewsItems-Length1024.Designer.cs">
+      <DependentUpon>201601261928436_NewsItems-Length1024.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -468,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601261926108_Added NewsItems.resx">
       <DependentUpon>201601261926108_Added NewsItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601261928436_NewsItems-Length1024.resx">
+      <DependentUpon>201601261928436_NewsItems-Length1024.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
