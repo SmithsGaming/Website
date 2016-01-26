@@ -225,6 +225,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\DataModels.cs" />
+    <Compile Include="Models\NewsItemModels.cs" />
     <Compile Include="Models\RoleConfigurationModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

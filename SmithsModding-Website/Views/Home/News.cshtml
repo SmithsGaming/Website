@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNet.Identity
 @using SmithsModding_Website.Models
-@model NewsItem
+@model NewsItemModels
 @{
     ViewBag.Title = "News";
 }
@@ -45,16 +45,16 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        @Html.LabelFor(m => m.Title, new { @class = "col-sm-2 control-label" })
+                        @Html.LabelFor(m => m.newNewsItem.Title, new { @class = "col-sm-2 control-label" })
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                            @Html.TextBoxFor(m => m.newNewsItem.Title, new { @class = "form-control" })
                         </div>
                     </div>
                     <br />
                     <div class="row">
-                        @Html.LabelFor(m => m.Post, new { @class = "col-sm-2 control-label" })
+                        @Html.LabelFor(m => m.newNewsItem.Post, new { @class = "col-sm-2 control-label" })
                         <div class="col-sm-10">
-                            @Html.TextAreaFor(m => m.Post, new { @class = "form-control wider" })
+                            @Html.TextAreaFor(m => m.newNewsItem.Post, new { @class = "form-control wider" })
                         </div>
                     </div>
                     <div class="row">

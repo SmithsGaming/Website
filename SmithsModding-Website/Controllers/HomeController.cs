@@ -24,6 +24,14 @@ namespace SmithsModding_Website.Controllers
             ViewBag.Message = "What's new in the world of Smiths Modding?";
             ViewBag.Logo = "~/Content/res/Logo.jpg";
             ViewBag.Header = true;
+
+            var nim = new NewsItemModels();
+
+            //TODO: Download a given amount of data from the DB and add it into the list. For now empty list:
+            nim.Items = new List<NewsItem>();
+
+            nim.newNewsItem = new NewsItem();
+
             return View();
         }
 
