@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Data.Entity;
 using System.Web.Mvc;
+using System.Net;
 
 namespace SmithsModding_Website.Controllers
 {
@@ -45,7 +46,7 @@ namespace SmithsModding_Website.Controllers
                 //That makes it so that the newest post land ontop and the oldest on the bottom.
                 nim.Items.Sort((x, y) => x.PublishDate.CompareTo(y.PublishDate) * -1);
             }
-            
+
             //Return the view.
             return View(nim);
         }
@@ -61,7 +62,7 @@ namespace SmithsModding_Website.Controllers
         [HttpPost]
         [Authorize(Roles = "Administrators")]
         [ValidateAntiForgeryToken]
-        public async System.Threading.Tasks.Task<ActionResult> News(NewsViewModel model)
+        public async System.Threading.Tasks.Task<ActionResult> AddNews(NewsViewModel model)
         {
             if (model.newNewsItem.Title != null && model.newNewsItem.Post != null)
             {
@@ -73,6 +74,28 @@ namespace SmithsModding_Website.Controllers
                     db.NewsItems.Add(model.newNewsItem);
                     await db.SaveChangesAsync();
                 }
+            }
+            return RedirectToAction("News", "Home");
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Administrators")]
+        [ValidateAntiForgeryToken]
+        public async System.Threading.Tasks.Task<ActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                NewsItem news = await db.NewsItems.FindAsync(id);
+                if(news == null)
+                {
+                    return HttpNotFound();
+                }
+                db.NewsItems.Remove(news);
+                await db.SaveChangesAsync();
             }
             return RedirectToAction("News", "Home");
         }

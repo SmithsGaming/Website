@@ -63,10 +63,6 @@
         list-style-type: none;
     }
 
-.news-header {
-    font-size:14px;
-}
-
 .news-entry {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -79,6 +75,31 @@
     border-bottom-width: 1px;
     border-color: #444444;
 }
+
+.news-header {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+.news-content {
+    font: normal normal normal 12px/16px "Helvetica Neue",Roboto,"Segoe UI",Calibri,sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+.news-footer {
+    font-size: 12px;
+    font-style: italic;
+}
+
+    .news-footer a {
+        font: 12px/16px 'Helvetica Neue', Roboto, 'Segoe UI', Calibri, sans-seri font-size: 12px;
+        font-style: italic;
+        color: #CFCFCF;
+    }
 
 .modal.fade.new-news {
     width: 725px;
@@ -95,4 +116,13 @@ textarea.form-control.wider {
     width: 550px;
     height: 200px;
     resize: none;
+}
+
+.modal.fade.delete-news{
+    width: 725px;
+    height: 450px;
+    top: 25%;
+    bottom: 30%;
+    left: 30%;
+    right: 30%;
 }
