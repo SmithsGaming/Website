@@ -62,6 +62,7 @@ namespace SmithsModding_Website.Controllers
         [HttpPost]
         [Authorize(Roles = "Administrators")]
         [ValidateAntiForgeryToken]
+        [ActionName("AddNews")]
         public async System.Threading.Tasks.Task<ActionResult> AddNews(NewsViewModel model)
         {
             if (model.newNewsItem.Title != null && model.newNewsItem.Post != null)
@@ -78,10 +79,9 @@ namespace SmithsModding_Website.Controllers
             return RedirectToAction("News", "Home");
         }
 
-        [HttpPost]
         [Authorize(Roles = "Administrators")]
-        [ValidateAntiForgeryToken]
-        public async System.Threading.Tasks.Task<ActionResult> Delete(string id)
+        [ActionName("DeleteNewsItem")]
+        public async System.Threading.Tasks.Task<ActionResult> DeleteNewsItem(string id)
         {
             if (id == null)
             {

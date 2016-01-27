@@ -44,9 +44,8 @@
                                         @if (User.IsInRole("Administrators"))
                                         {
                                             <div class="col-sm-6" style="text-align:right">
-                                                @Html.AntiForgeryToken()
                                                 <a href=@Url.Action("Edit","Home", new { id = item.Id}) style="margin-right:10px"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
-                                                <a href=@Url.Action("Delete","Home", new { id = item.Id})><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                                <a href=@Url.Action("DeleteNewsItem", "Home", new { id = item.Id })><span class="glyphicon glyphicon-trash"></span> Delete</a>
                                             </div>
                                         }
                                     </div>
