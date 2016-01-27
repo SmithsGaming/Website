@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNet.Identity
 @using SmithsModding_Website.Models
-@model NewsItemModels
+@model NewsViewModel
 @{
     ViewBag.Title = "News";
 }
@@ -31,7 +31,6 @@
                             <li class="news-entry">
                                 <div class="news-header">
                                     <b>@item.Title</b>
-                                    <b>@(item.Author == null)</b>
                                 </div>
                                 <br />
                                 <div class="news-content">

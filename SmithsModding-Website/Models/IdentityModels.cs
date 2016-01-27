@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace SmithsModding_Website.Models
 {
@@ -16,6 +17,8 @@ namespace SmithsModding_Website.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public ICollection<NewsItem> getNews { get; set; }
 
         public static IdentityUser getUserByID(string id)
         {

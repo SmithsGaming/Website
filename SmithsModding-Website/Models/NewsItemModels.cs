@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SmithsModding_Website.Models
 {
-    public class NewsItemModels
+    public class NewsViewModel
     {
-        public IList<NewsItem> Items { get; set; }
+        public List<NewsItem> Items { get; set; }
 
         public NewsItem newNewsItem { get; set; }
     }
