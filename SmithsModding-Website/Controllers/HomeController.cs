@@ -90,7 +90,7 @@ namespace SmithsModding_Website.Controllers
             using (ApplicationDbContext db = new ApplicationDbContext())
             {
                 NewsItem news = await db.NewsItems.FindAsync(id);
-                if(news == null)
+                if (news == null)
                 {
                     return HttpNotFound();
                 }
@@ -98,6 +98,27 @@ namespace SmithsModding_Website.Controllers
                 await db.SaveChangesAsync();
             }
             return RedirectToAction("News", "Home");
+        }
+
+        [Authorize(Roles = "Administrators")]
+        [ActionName("GetEditContext")]
+        public async System.Threading.Tasks.Task<ActionResult> GetEditContext(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                var nim = new NewsViewModel();
+                NewsItem news = await db.NewsItems.FindAsync(id);
+                if (news == null)
+                {
+                    return RedirectToAction("News", "Home");
+                }
+                nim.editNewsItem = news;
+                return PartialView("_EditNewsPartial", nim);
+            }
         }
     }
 }

@@ -117,12 +117,3 @@ textarea.form-control.wider {
     height: 200px;
     resize: none;
 }
-
-.modal.fade.delete-news{
-    width: 725px;
-    height: 450px;
-    top: 25%;
-    bottom: 30%;
-    left: 30%;
-    right: 30%;
-}

@@ -11,5 +11,7 @@ namespace SmithsModding_Website.Models
         public List<NewsItem> Items { get; set; }
 
         public NewsItem newNewsItem { get; set; }
+
+        public NewsItem editNewsItem { get; set; }
     }
 }
