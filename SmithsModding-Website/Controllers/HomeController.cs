@@ -30,6 +30,10 @@ namespace SmithsModding_Website.Controllers
             //TODO: Download a given amount of data from the DB and add it into the list. For now empty list:
             nim.Items = new List<NewsItem>();
 
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                
+            }
             nim.newNewsItem = new NewsItem();
 
             return View(nim);
@@ -57,10 +61,9 @@ namespace SmithsModding_Website.Controllers
                     model.newNewsItem.Author = await new UserManager<ApplicationUser, string>(new UserStore<ApplicationUser>(db)).FindByIdAsync(User.Identity.GetUserId());
                     db.NewsItems.Add(model.newNewsItem);
                     await db.SaveChangesAsync();
-                    return RedirectToAction("News", "Home");
                 }
             }
-            return View(model);
+            return RedirectToAction("News", "Home");
         }
     }
 }

@@ -23,7 +23,24 @@
                 }
             </div>
             <div class="container-news-stream" style="height:555px">
-
+                <ol class="news-feed">
+                    @if (Model.Items.Count > 0)
+                    {
+                        foreach (NewsItem item in Model.Items)
+                        {
+                            <li class="news-entry">
+                                <div class="news-header">
+                                    <b>@item.Title</b>
+                                    <b>@(item.Author == null)</b>
+                                </div>
+                                <br />
+                                <div class="news-content">
+                                    @item.Post
+                                </div>
+                            </li>
+                        }
+                    }
+                </ol>
             </div>
         </div>
     </div>
