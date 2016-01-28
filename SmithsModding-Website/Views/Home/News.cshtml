@@ -29,7 +29,7 @@
                         foreach (NewsItem item in Model.Items)
                         {
 
-                            if (Model.editNewsItem == null || Model.editNewsItem.Id != item.Id)
+                            if (Model.editNewsItem == null || Model.editNewsItem.Id != item.Id||  !(User.IsInRole("Administrators")))
                             {
                                 <li class="news-entry">
                                     <text hidden>@item.Id</text>

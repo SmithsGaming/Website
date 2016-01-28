@@ -338,6 +338,7 @@
     <None Include="Properties\PublishProfiles\SmithsModding Site.pubxml" />
     <None Include="Properties\PublishProfiles\SmithsModding Website.pubxml" />
     <None Include="Properties\PublishProfiles\SmithsModding.pubxml" />
+    <None Include="Properties\PublishProfiles\Website FTP.pubxml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
