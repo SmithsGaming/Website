@@ -122,6 +122,25 @@ namespace SmithsModding_Website.Controllers
             return View("News", nim);
         }
 
+        //GetNewItemContext
+        [Authorize(Roles = "Administrators")]
+        [ActionName("GetNewItemContext")]
+        public async System.Threading.Tasks.Task<ActionResult> GetNewItemContext(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var nim = await getStandardNewsDisplayModel();
+            var ni = new NewsItem() { Id = id };
+
+            nim.newNewsItem = ni;
+            
+            return View("News", nim);
+        }
+
+
         private async System.Threading.Tasks.Task<NewsViewModel> getStandardNewsDisplayModel()
         {
             var nim = new NewsViewModel();
