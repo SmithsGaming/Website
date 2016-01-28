@@ -28,70 +28,70 @@
                     {
                         foreach (NewsItem item in Model.Items)
                         {
-                            
-                                if (Model.editNewsItem == null || Model.editNewsItem.Id != item.Id)
-                                {
-                                    <li class="news-entry">
-                                        <text hidden>@item.Id</text>
-                                        <div class="news-header">
-                                            <b>@item.Title</b>
-                                        </div>
-                                        <div class="news-content">
-                                            @item.Post
-                                        </div>
-                                        <div class="news-footer">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    Posted by @item.Author.UserName on @item.PublishDate.ToShortDateString()
-                                                </div>
-                                                @if (User.IsInRole("Administrators") && Model.editNewsItem == null)
-                                                {
+
+                            if (Model.editNewsItem == null || Model.editNewsItem.Id != item.Id)
+                            {
+                                <li class="news-entry">
+                                    <text hidden>@item.Id</text>
+                                    <div class="news-header">
+                                        <b>@item.Title</b>
+                                    </div>
+                                    <div class="news-content">
+                                        @item.Post
+                                    </div>
+                                    <div class="news-footer">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                Posted by @item.Author.UserName on @item.PublishDate.ToShortDateString()
+                                            </div>
+                                            @if (User.IsInRole("Administrators") && Model.editNewsItem == null)
+                                            {
                                                 <div class="col-sm-6" style="text-align:right">
                                                     <a class="edit-news" href=@Url.Action("GetEditContext","Home", new { id = item.Id}) style="margin-right:10px"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                                                     <a href=@Url.Action("DeleteNewsItem", "Home", new { id = item.Id })><span class="glyphicon glyphicon-trash"></span> Delete</a>
                                                 </div>
-                                                }
-                                            </div>
-                                        </div>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="news-entry">
-                                        <div>
-                                            @using (Html.BeginForm("EditNews", "Home", FormMethod.Post))
-                                            {
-                                                @Html.AntiForgeryToken();
-                                                @Html.HiddenFor(m => m.editNewsItem.Id);
-                                                @Html.HiddenFor(m => m.editNewsItem.PublishDate);
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Add a News Item</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="row">
-                                                            @Html.LabelFor(m => m.editNewsItem.Title, new { @class = "col-sm-2 control-label" })
-                                                            <div class="col-sm-10">
-                                                                @Html.EditorFor(m => m.editNewsItem.Title, new { @class = "form-control" })
-                                                            </div>
-                                                        </div>
-                                                        <br />
-                                                        <div class="row">
-                                                            @Html.LabelFor(m => m.editNewsItem.Post, new { @class = "col-sm-2 control-label" })
-                                                            <div class="col-sm-10">
-                                                                @Html.EditorFor(m => m.editNewsItem.Post, new { @class = "form-control wider" })
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <input type="submit" value="Submit" class="btn btn-default" />
-                                                    </div>
-                                                </div>
                                             }
                                         </div>
-                                    </li>
-                                }
+                                    </div>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="news-entry">
+                                    <div>
+                                        @using (Html.BeginForm("EditNews", "Home", FormMethod.Post))
+                                        {
+                                            @Html.AntiForgeryToken();
+                                            @Html.HiddenFor(m => m.editNewsItem.Id);
+                                            @Html.HiddenFor(m => m.editNewsItem.PublishDate);
+                                            <div class="modal-content context-edit-news">
+                                                <div class="modal-header">
+                                                    <a href=@Url.Action("News", "Home") class="btn close" style="float:right;padding:0px;margin-top:-2px">&times;</a>
+                                                    <h4 class="modal-title">Edit News Item</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        @Html.LabelFor(m => m.editNewsItem.Title, new { @class = "col-sm-2 control-label" })
+                                                        <div class="col-sm-10">
+                                                            @Html.EditorFor(m => m.editNewsItem.Title, new { @class = "form-control" })
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <div class="row">
+                                                        @Html.LabelFor(m => m.editNewsItem.Post, new { @class = "col-sm-2 control-label" })
+                                                        <div class="col-sm-10">
+                                                            @Html.EditorFor(m => m.editNewsItem.Post, new { @class = "form-control wider" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input type="submit" value="Submit" class="btn btn-default" />
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </li>
+                            }
                         }
                     }
                 </ol>

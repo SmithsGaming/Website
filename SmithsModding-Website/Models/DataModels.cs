@@ -18,6 +18,7 @@ namespace SmithsModding_Website.Models
 
         [Required]
         [StringLength(512)]
+        [DataType(DataType.MultilineText)]
         public string Post { get; set; }
 
         public DateTime PublishDate { get; set; }
