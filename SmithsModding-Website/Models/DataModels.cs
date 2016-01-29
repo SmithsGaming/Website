@@ -27,6 +27,22 @@ namespace SmithsModding_Website.Models
         public ApplicationUser Author { get; set; }
     }
 
+    public partial class ProjectItem
+    {
+        public string Id { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(128)]
+        public string Message { get; set; }
+
+        [Required]
+        public string LogoPath { get; set; }
+    }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()

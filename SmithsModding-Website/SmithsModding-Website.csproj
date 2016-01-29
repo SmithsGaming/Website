@@ -252,6 +252,7 @@
     <Content Include="Content\css\select2.png" />
     <Content Include="Content\css\select2x2.png" />
     <Content Include="Content\DynamicStyle.css" />
+    <Content Include="Content\MainPage.css" />
     <Content Include="Content\NewsStyle.css" />
     <Content Include="Content\res\ArditeArmor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
