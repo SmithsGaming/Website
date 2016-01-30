@@ -52,7 +52,7 @@ namespace SmithsModding_Website.Controllers
                 using (ApplicationDbContext db = new ApplicationDbContext())
                 {
                     model.newNewsItem.Author = await new UserManager<ApplicationUser, string>(new UserStore<ApplicationUser>(db)).FindByIdAsync(User.Identity.GetUserId());
-                    db.NewsItems.Add(model.newNewsItem);
+                    db.News.Add(model.newNewsItem);
                     await db.SaveChangesAsync();
                 }
             }
@@ -86,12 +86,12 @@ namespace SmithsModding_Website.Controllers
             }
             using (ApplicationDbContext db = new ApplicationDbContext())
             {
-                NewsItem news = await db.NewsItems.FindAsync(id);
+                NewsItem news = await db.News.FindAsync(id);
                 if (news == null)
                 {
                     return HttpNotFound();
                 }
-                db.NewsItems.Remove(news);
+                db.News.Remove(news);
                 await db.SaveChangesAsync();
             }
             return RedirectToAction("News", "Home");
@@ -110,7 +110,7 @@ namespace SmithsModding_Website.Controllers
 
             using (ApplicationDbContext db = new ApplicationDbContext())
             {
-                NewsItem editItem = await db.NewsItems.FindAsync(id);
+                NewsItem editItem = await db.News.FindAsync(id);
                 if (editItem == null)
                 {
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -151,13 +151,13 @@ namespace SmithsModding_Website.Controllers
                 int lastPostIndex = 19;
 
                 //If we donnot have 20 posts yet, grab as many as we have.
-                if ((await db.NewsItems.CountAsync()) < 20)
+                if ((await db.News.CountAsync()) < 20)
                 {
-                    lastPostIndex = (await db.NewsItems.CountAsync());
+                    lastPostIndex = (await db.News.CountAsync());
                 }
 
                 //Grab the determined amount of posts (use include to grab a relation ship, cause LazyLoading is disabled)
-                nim.Items = (await db.NewsItems.Include(u => u.Author).ToListAsync()).GetRange(0, lastPostIndex);
+                nim.Items = (await db.News.Include(u => u.Author).ToListAsync()).GetRange(0, lastPostIndex);
 
                 //Sort them based on the release date: mulitply with -1 inverts the sort order
                 //That makes it so that the newest post land ontop and the oldest on the bottom.

@@ -232,6 +232,14 @@
     <Compile Include="Migrations\201601271118189_Added-NewsItems-To-User.Designer.cs">
       <DependentUpon>201601271118189_Added-NewsItems-To-User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601301321114_Added_Projects.cs" />
+    <Compile Include="Migrations\201601301321114_Added_Projects.Designer.cs">
+      <DependentUpon>201601301321114_Added_Projects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601301338238_Create_Project_Contents.cs" />
+    <Compile Include="Migrations\201601301338238_Create_Project_Contents.Designer.cs">
+      <DependentUpon>201601301338238_Create_Project_Contents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -668,6 +676,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601271118189_Added-NewsItems-To-User.resx">
       <DependentUpon>201601271118189_Added-NewsItems-To-User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601301321114_Added_Projects.resx">
+      <DependentUpon>201601301321114_Added_Projects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601301338238_Create_Project_Contents.resx">
+      <DependentUpon>201601301338238_Create_Project_Contents.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
