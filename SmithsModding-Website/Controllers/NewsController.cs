@@ -42,7 +42,7 @@ namespace SmithsModding_Website.Controllers
                     await db.SaveChangesAsync();
                 }
             }
-            return RedirectToAction("News", "Home");
+            return RedirectToAction("Index", "News");
         }
 
         [HttpPost]
@@ -59,7 +59,7 @@ namespace SmithsModding_Website.Controllers
                 await db.SaveChangesAsync();
             }
 
-            return RedirectToAction("News", "Home");
+            return RedirectToAction("Index", "News");
         }
 
         [Authorize(Roles = "Administrators")]
@@ -80,7 +80,7 @@ namespace SmithsModding_Website.Controllers
                 db.News.Remove(news);
                 await db.SaveChangesAsync();
             }
-            return RedirectToAction("News", "Home");
+            return RedirectToAction("Index", "News");
         }
 
         [Authorize(Roles = "Administrators")]
@@ -105,7 +105,7 @@ namespace SmithsModding_Website.Controllers
                 nim.editNewsItem = editItem;
             }
 
-            return View("News", nim);
+            return View("Index", nim);
         }
 
         //GetNewItemContext
@@ -123,7 +123,7 @@ namespace SmithsModding_Website.Controllers
 
             nim.newNewsItem = ni;
 
-            return View("News", nim);
+            return View("Index", nim);
         }
 
 

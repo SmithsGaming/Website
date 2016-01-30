@@ -18,7 +18,7 @@
                 @if (User.IsInRole("Administrators"))
                 {
                     <div class="col-1-4" style="width:50%; text-align:right">
-                        <a href=@Url.Action("GetNewItemContext","Home", new { id = Guid.NewGuid()})><span class="glyphicon glyphicon-plus-sign"></span> Add Item</a>
+                        <a href=@Url.Action("GetNewItemContext","News", new { id = Guid.NewGuid()})><span class="glyphicon glyphicon-plus-sign"></span> Add Item</a>
                     </div>
                 }
             </div>
@@ -27,13 +27,13 @@
                     @if (Model.newNewsItem != null)
                     {
                         <li>
-                            @using (Html.BeginForm("AddNews", "Home", FormMethod.Post))
+                            @using (Html.BeginForm("AddNews", "News", FormMethod.Post))
                             {
                                 @Html.AntiForgeryToken()
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         @* <button type="button" class="close" data-dismiss="modal">&times;</button> *@
-                                        <a class="close" href=@Url.Action("News", "Home")>&times;</a>
+                                        <a class="close" href=@Url.Action("Index", "News")>&times;</a>
                                         <h4 class="modal-title">Add a News Item</h4>
                                     </div>
                                     <div class="modal-body">
@@ -82,8 +82,8 @@
                                             @if (User.IsInRole("Administrators") && Model.editNewsItem == null)
                                             {
                                                 <div class="col-sm-6" style="text-align:right">
-                                                    <a class="edit-news" href=@Url.Action("GetEditContext","Home", new { id = item.Id}) style="margin-right:10px"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
-                                                    <a href=@Url.Action("DeleteNewsItem", "Home", new { id = item.Id })><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                                    <a class="edit-news" href=@Url.Action("GetEditContext","News", new { id = item.Id}) style="margin-right:10px"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+                                                    <a href=@Url.Action("DeleteNewsItem", "News", new { id = item.Id })><span class="glyphicon glyphicon-trash"></span> Delete</a>
                                                 </div>
                                             }
                                         </div>
@@ -94,14 +94,14 @@
                             {
                                 <li class="news-entry">
                                     <div>
-                                        @using (Html.BeginForm("EditNews", "Home", FormMethod.Post))
+                                        @using (Html.BeginForm("EditNews", "News", FormMethod.Post))
                                         {
                                             @Html.AntiForgeryToken();
                                             @Html.HiddenFor(m => m.editNewsItem.Id);
                                             @Html.HiddenFor(m => m.editNewsItem.PublishDate);
                                             <div class="modal-content context-edit-news">
                                                 <div class="modal-header">
-                                                    <a href=@Url.Action("News", "Home") class="btn close" style="float:right;padding:0px;margin-top:-2px">&times;</a>
+                                                    <a href=@Url.Action("Index", "News") class="btn close" style="float:right;padding:0px;margin-top:-2px">&times;</a>
                                                     <h4 class="modal-title">Edit News Item</h4>
                                                 </div>
                                                 <div class="modal-body">
