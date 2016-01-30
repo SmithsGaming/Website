@@ -249,6 +249,10 @@
     <Compile Include="Migrations\201601301549319_Added_Project_AccesLevel.Designer.cs">
       <DependentUpon>201601301549319_Added_Project_AccesLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601301646502_Updated UserSystem to allow Permissions.cs" />
+    <Compile Include="Migrations\201601301646502_Updated UserSystem to allow Permissions.Designer.cs">
+      <DependentUpon>201601301646502_Updated UserSystem to allow Permissions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -697,6 +701,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601301549319_Added_Project_AccesLevel.resx">
       <DependentUpon>201601301549319_Added_Project_AccesLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601301646502_Updated UserSystem to allow Permissions.resx">
+      <DependentUpon>201601301646502_Updated UserSystem to allow Permissions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

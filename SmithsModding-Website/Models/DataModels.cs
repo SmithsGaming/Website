@@ -5,7 +5,9 @@ namespace SmithsModding_Website.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Common;
     using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Spatial;
 
     public partial class NewsItem
@@ -109,10 +111,10 @@ namespace SmithsModding_Website.Models
 
 
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : SmithsModdingIdentityDbContext
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")
         {
         }
 
@@ -127,5 +129,22 @@ namespace SmithsModding_Website.Models
         public virtual DbSet<NewsItem> News { get; set; }
 
         public virtual DbSet<Project> Projects { get; set; }
+    }
+
+    public abstract class SmithsModdingIdentityDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>
+    {
+
+        public SmithsModdingIdentityDbContext() : base() { }
+
+        public SmithsModdingIdentityDbContext(string nameOrConnectionString) : base(nameOrConnectionString) { }
+
+        public SmithsModdingIdentityDbContext(DbCompiledModel model) : base(model) { }
+
+        public SmithsModdingIdentityDbContext(DbConnection existingConnection, bool contextOwnsConnection) : base(existingConnection, contextOwnsConnection) { }
+
+        public SmithsModdingIdentityDbContext(string nameOrConnectionString, DbCompiledModel model) : base(nameOrConnectionString, model) { }
+
+        public SmithsModdingIdentityDbContext(DbConnection existingConnection, DbCompiledModel model, bool contextOwnsConnection) : base(existingConnection, model, contextOwnsConnection) { }
+
     }
 }

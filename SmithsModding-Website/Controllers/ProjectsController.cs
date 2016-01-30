@@ -1,7 +1,9 @@
-﻿using SmithsModding_Website.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using SmithsModding_Website.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 
@@ -54,11 +56,6 @@ namespace SmithsModding_Website.Controllers
             ViewBag.Logo = "~/Content/res/TinyStorageLogo.png";
             ViewBag.Header = true;
             return View();
-        }
-
-        public static ICollection<Project> getVisibleProjects()
-        {
-            return null;
         }
     }
 }
