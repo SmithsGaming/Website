@@ -45,9 +45,20 @@ namespace SmithsModding_Website.Models
         [Required]
         public string LogoPath { get; set; }
 
+        public ProjectAccesLevel AccesLevel { get; set; }
+
         public string PageContent { get; set; }
 
         public ICollection<DocumentationGroup> Documentation { get; set; }
+    }
+
+    public enum ProjectAccesLevel
+    {
+        PUBLIC,
+        LOGGEDIN,
+        SMITHSMODDINGMEMBER,
+        PROJECTMEMBER,
+        ADMIN
     }
 
     public partial class DocumentationGroup
