@@ -58,7 +58,7 @@ namespace SmithsModding_Website.Controllers
 
         public static ICollection<Project> getVisibleProjects()
         {
-
+            return null;
         }
     }
 }
