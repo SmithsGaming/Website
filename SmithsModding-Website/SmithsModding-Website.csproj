@@ -207,6 +207,7 @@
     <Compile Include="Controllers\ForumsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="DynamicMVC\DynamicControllerManager.cs" />
     <Compile Include="Global.asax.cs">
@@ -642,7 +643,7 @@
     <Content Include="Views\Projects\Armory.cshtml" />
     <Content Include="Views\Projects\Weaponry.cshtml" />
     <Content Include="Views\Projects\World.cshtml" />
-    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Forums\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Projects\Index.cshtml" />
