@@ -45,7 +45,6 @@ namespace SmithsModding_Website.Models
         [Required]
         public string LogoPath { get; set; }
 
-        [Required]
         public string PageContent { get; set; }
 
         public ICollection<DocumentationGroup> Documentation { get; set; }

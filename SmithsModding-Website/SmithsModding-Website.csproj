@@ -241,6 +241,10 @@
     <Compile Include="Migrations\201601301338238_Create_Project_Contents.Designer.cs">
       <DependentUpon>201601301338238_Create_Project_Contents.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601301540540_Removed_Required_From_PageContents_On_Projects.cs" />
+    <Compile Include="Migrations\201601301540540_Removed_Required_From_PageContents_On_Projects.Designer.cs">
+      <DependentUpon>201601301540540_Removed_Required_From_PageContents_On_Projects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -683,6 +687,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601301338238_Create_Project_Contents.resx">
       <DependentUpon>201601301338238_Create_Project_Contents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601301540540_Removed_Required_From_PageContents_On_Projects.resx">
+      <DependentUpon>201601301540540_Removed_Required_From_PageContents_On_Projects.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
